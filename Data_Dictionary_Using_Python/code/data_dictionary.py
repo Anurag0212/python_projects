@@ -3,23 +3,22 @@
 import json, glob
 from difflib import get_close_matches
 
-#Storing all the .json files into a variable name
+#Storing all the .json files name into a variable
 
 filename = glob.iglob("C:/Users/Anurag/Desktop/python/python_projects/Data_Dictionary_Using_Python/data_folder/*.json")
 
-#writing a function to load data from all the json file into a variable
-#data will be available in the form of dictionary.
+#Loading data from json file into a python variable
 
 for _file in filename:
-    data = json.load(open(_file))
+    data = json.load(open(_file))   #data will be available in the form of dictionary.
 
-#Defining a function which will search for the word from the dictionary
-#It will provide suggestions to the user of the user input is not present in the dictionary
 
+#Definition of a function which takes word as an input and return its meaning
+#If the word is not present in the json file it tries to suggest a similar word instead
 def dictionary(word):
-    if word in data.keys():   #Checks for the word in dictionary
+    if word in data.keys():   #Reviews the word in dictionary and returns its meaning if present.
         return data[word]
-    elif word.title() in data.keys():  #Check for titles in the dictionary for ex. India, Texas etc.
+    elif word.title() in data.keys():  #Check for titles in the dictionary, for example word like India, Texas etc.
         return data[word.title()]
     elif word.upper() in data:   #Check for the words in uppercase
         return data[word.upper()]
@@ -36,7 +35,7 @@ def dictionary(word):
         return "Word doesn't exist. Please double check it."
 
 
-#A function which will take the user input and provide its meaning.
+#Definition of a function which takes an input from user, pass it to another function and prints the result.
 
 def new_input():
     _input = input("please enter your word:").lower()
