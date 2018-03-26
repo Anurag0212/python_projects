@@ -1,6 +1,6 @@
 ### python_projects:
 
-1. **Data Dictionary using python**  
+1. **Data Dictionary using python**  (python_projects/Data_Dictionary_Using_Python)
 Enable users to search the meaning of a word using python.
 It also provides close matched for the words which are not present in the existing json file in case of missing or misspelled words.
 for example, if user enters rainn instead of rain, this code recognises the inaccuracy and suggest the correct words to the user.
